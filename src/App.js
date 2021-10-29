@@ -25,7 +25,7 @@ function App() {
     };
 
     const fetchUsers = () => {
-        fetch('http://localhost:8080/api/users?per_page=' + perPage + '&since=' + ((page - 1) * perPage))
+        fetch('https://shawandpartnersspring.herokuapp.com/api/users?per_page=' + perPage + '&since=' + ((page - 1) * perPage))
             .then(response => response.json())
             .then(data => setUsers(data));
     }
