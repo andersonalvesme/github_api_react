@@ -8,13 +8,13 @@ const User = () => {
     const {id} = useParams();
     const [user, setUser] = React.useState({});
 
-    const fetchUser = () => {
-        fetch(process.env.REACT_APP_API + '/api/users?per_page=1&since=' + id)
-            .then(response => response.json())
-            .then(data => setUser(data[0]));
-    }
-
     useEffect(() => {
+        const fetchUser = () => {
+            fetch(process.env.REACT_APP_API + '/api/users?per_page=1&since=' + id)
+                .then(response => response.json())
+                .then(data => setUser(data[0]));
+        }
+
         fetchUser()
     }, []);
 

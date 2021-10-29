@@ -8,11 +8,6 @@ const UserRepos = (props) => {
     const [totalPages, setTotalPages] = React.useState(5);
     const [repos, setRepos] = React.useState([]);
 
-    const fetchRepos = () => {
-        fetch(process.env.REACT_APP_API + '/api/users/' + userName + '/repos?per_page=' + perPage + '&page=' + page)
-            .then(response => response.json())
-            .then(data => setRepos(data));
-    }
     const handlePageChange = (page: number) => {
         setPage(page);
         setTotalPages(page >= 5 ? page + 1 : 5);
@@ -25,6 +20,12 @@ const UserRepos = (props) => {
     };
 
     useEffect(() => {
+        const fetchRepos = () => {
+            fetch(process.env.REACT_APP_API + '/api/users/' + userName + '/repos?per_page=' + perPage + '&page=' + page)
+                .then(response => response.json())
+                .then(data => setRepos(data));
+        }
+
         fetchRepos()
     }, [page, userName]);
 

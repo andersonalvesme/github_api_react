@@ -9,11 +9,6 @@ const Home = () => {
     const [totalPages, setTotalPages] = React.useState(5);
     const [users, setUsers] = React.useState([]);
 
-    const fetchUsers = () => {
-        fetch(process.env.REACT_APP_API + '/api/users?per_page=' + perPage + '&since=' + ((page - 1) * perPage))
-            .then(response => response.json())
-            .then(data => setUsers(data));
-    }
     const handlePageChange = (page: number) => {
         setPage(page);
         setTotalPages(page >= 5 ? page + 1 : 5);
@@ -26,6 +21,12 @@ const Home = () => {
     };
 
     useEffect(() => {
+        const fetchUsers = () => {
+            fetch(process.env.REACT_APP_API + '/api/users?per_page=' + perPage + '&since=' + ((page - 1) * perPage))
+                .then(response => response.json())
+                .then(data => setUsers(data));
+        }
+
         fetchUsers()
     }, [page]);
 
