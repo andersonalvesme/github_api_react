@@ -16,7 +16,6 @@ const UserRepos = (props) => {
     const handlePageChange = (page: number) => {
         setPage(page);
         setTotalPages(page >= 5 ? page + 1 : 5);
-        fetchRepos();
     };
     const handlePreviousPage = () => {
         handlePageChange(page - 1);
@@ -27,7 +26,7 @@ const UserRepos = (props) => {
 
     useEffect(() => {
         fetchRepos()
-    }, []);
+    }, [page, userName]);
 
     return (
         <Pane height={"auto"} display="block" border="default">
@@ -42,8 +41,8 @@ const UserRepos = (props) => {
                     {repos.length > 0 ?
                         repos.map((repo) => (
                             <Table.Row key={repo.id} maxHeight={"35px"}>
-                                <Table.TextCell flexShrink={0} flexGrow={0} flex="10%">{repo.id}</Table.TextCell>
-                                <Table.TextCell flexShrink={0} flexGrow={0} flex="40%">{repo.login}</Table.TextCell>
+                                <Table.TextCell flexShrink={0} flexGrow={0} flex="15%">{repo.id}</Table.TextCell>
+                                <Table.TextCell flexShrink={0} flexGrow={0} flex="35%">{repo.login}</Table.TextCell>
                                 <Table.TextCell flexShrink={0} flexGrow={0} flex="50%">{repo.url}</Table.TextCell>
                             </Table.Row>
                         ))

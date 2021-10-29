@@ -17,7 +17,6 @@ const Home = () => {
     const handlePageChange = (page: number) => {
         setPage(page);
         setTotalPages(page >= 5 ? page + 1 : 5);
-        fetchUsers();
     };
     const handlePreviousPage = () => {
         handlePageChange(page - 1);
@@ -28,7 +27,7 @@ const Home = () => {
 
     useEffect(() => {
         fetchUsers()
-    }, []);
+    }, [page]);
 
     return (
         <Pane height={"auto"} display="block" border="default">
