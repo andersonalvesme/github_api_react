@@ -16,7 +16,7 @@ const User = () => {
         }
 
         fetchUser()
-    }, []);
+    }, [id]);
 
     return (
         <div className="user">
