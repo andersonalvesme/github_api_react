@@ -21,7 +21,7 @@ const UserRepos = (props) => {
 
     useEffect(() => {
         const fetchRepos = () => {
-            fetch(process.env.REACT_APP_API + '/api/users/' + userName + '/repos?per_page=' + perPage + '&page=' + page)
+            fetch(process.env.REACT_APP_API + '/users/' + userName + '/repos?per_page=' + perPage + '&page=' + page)
                 .then(response => response.json())
                 .then(data => setRepos(data));
         }

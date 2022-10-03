@@ -10,7 +10,7 @@ const User = () => {
 
     useEffect(() => {
         const fetchUser = () => {
-            fetch(process.env.REACT_APP_API + '/api/users?per_page=1&since=' + id)
+            fetch(process.env.REACT_APP_API + '/users?per_page=1&since=' + id)
                 .then(response => response.json())
                 .then(data => setUser(data[0]));
         }

@@ -22,7 +22,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchUsers = () => {
-            fetch(process.env.REACT_APP_API + '/api/users?per_page=' + perPage + '&since=' + ((page - 1) * perPage))
+            fetch(process.env.REACT_APP_API + '/users?per_page=' + perPage + '&since=' + ((page - 1) * perPage))
                 .then(response => response.json())
                 .then(data => setUsers(data));
         }

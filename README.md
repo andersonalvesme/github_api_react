@@ -8,19 +8,16 @@ You need to install the NodeJS for run in local environment;
 
 Execute the command `npm start`.
 
-### Production environment
+### Images from project
 
-Endpoint: https://shawandpartnersreact.herokuapp.com/
+### Users list
 
+<kbd>
+<img src="https://github.com/andersonalvesme/github_api_react/blob/master/_readme_images/list.png" alt="Users list">
+</kbd>
 
-Deploy running using bitbucket-pipelines.
+### User detail
 
-Image:
-![img.png](img.png)
-
-### Notes
-
-- This is my first ReactJS project, I didn't haved much time for study in this week, but I liked a lot made this;
-- I always use jQuery a lot in frontend with Bootstrap, but I wanted to use ReactJS.
-
-*** I work a lot in my actual job. I am a Site Reliability Enginner now and I don't have much time. Thanks.
+<kbd>
+<img src="https://github.com/andersonalvesme/github_api_react/blob/master/_readme_images/detail.png" alt="User detail">
+</kbd>
